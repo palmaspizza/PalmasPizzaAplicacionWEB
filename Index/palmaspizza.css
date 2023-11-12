@@ -1949,11 +1949,115 @@ input[type="text"] {
 
 
 
+meta[name="theme-color"] {
+  content: #ff8900;
+  
+    }
+  
+  
+  
+  
+  button:active {
+    background-color: #ff8900;
+    transform: translateY(3%);
+    color: #fff;
+  }
+  
+  a:active {
+    background-color: #ff8900;
+    transform: translateY(4px);
+    color: #fff;
+  }
+
+  
 
 
 
+        .slider {
+          width: 100%;
+          height: 250px;
+          position: relative;
+          overflow: hidden;
+        }
+        .slider img {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0;
+          transition: opacity 1s ease-in-out;
+        }
+        .slider img:first-child {
+          opacity: 1;
+        }
+        .slider img.active {
+          opacity: 1;
+        }
+        .slider .slider-controls {
+          position: absolute;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          z-index: 1;
+        }
+        .slider .slider-controls button {
+          background-color: #fff;
+          border: none;
+          margin: 0 10px;
+          padding: 10px;
+          border-radius: 50%;
+          cursor: pointer;
+          box-shadow: 0 0 10px rgba(0,0,0,0.5);
+          transition: all 0.3s ease-in-out;
+        }
+        .slider .slider-controls button:hover {
+          transform: scale(1.1);
+          box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        .slider .slider-controls button.active {
+          background-color: #ff8900;
+          color: #fff;
+        }
 
 
+
+         /* Estilos para la ventana de carga */
+  .carga {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    height: 100%;
+
+}
+.carga-contenido {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    background-color: #ff7d3c;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+.imagen-giratoria {
+    animation: girar 2s linear infinite;
+    margin-top: 50%;
+    width: 60%;
+    height: auto;
+}
+@keyframes girar {
+    0% { transform: rotate(0); }
+    100% { transform: rotate(360deg); }
+}
 
 
 

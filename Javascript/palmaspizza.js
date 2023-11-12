@@ -12,8 +12,11 @@ const telefono = document.querySelector("#telefono").value;
 const formadepago = document.querySelector("#formadepago").value;
 const cancelocon = document.querySelector("#cancelocon").value;
 const pagacon = document.querySelector("#pagacon").value;
+const direccionlugar = document.querySelector("#direccion-lugar").value;
+const otro = document.querySelector("#input-otro").value;
 const direccion = document.querySelector("#direccion").value;
 const direccionnum = document.querySelector("#direccionnum").value;
+const inputdepartamento = document.querySelector("#inputdepartamento").value;
 
 
 
@@ -131,39 +134,40 @@ resp.classList.remove("fail");
 resp.classList.remove("send");
 
 const url = `https://api.whatsapp.com/send?phone=56952323555&text=
-*🍕_=Palmas Pizza=_🍕*%0A
-👤¨*${nombre}*%0A%0A
-*☎️* +56${telefono} %0A%0A
+*_🍕=Palmas Pizza=🍕_*%0A
+👤*${nombre}*%0A%0A
+*☎️* +56${telefono}%0A%0A
 *Forma de Pago:*%0A
 *${formadepago}*%0A%0A
 ${cancelocon} $${pagacon}%0A
 ---------------------%0A
-*🏠* *${direccion}+${direccionnum}*%0A%0A 
+${direccionlugar}+${direccion}+${direccionnum}%0A
+${inputdepartamento}+${otro}%0A
 --------------------- %0A
 🛎️== *PEDIDO* == 🛎️ %0A
-${italianacantidad} ${italianapizza} ${italianatamaño} ${italianamasa}
+${italianacantidad}+${italianapizza}+${italianatamaño}+${italianamasa}
 ${instruccionesitaliana}%0A
-${hawaianacantidad} ${hawaianapizza} ${hawaianatamaño} ${hawaianamasa}
+${hawaianacantidad}+${hawaianapizza}+${hawaianatamaño}+${hawaianamasa}
 ${instruccioneshawaiana}%0A
-${napolitanacantidad} ${napolitanapizza} ${napolitanatamaño} ${napolitanamasa}
+${napolitanacantidad}+${napolitanapizza}+${napolitanatamaño}+${napolitanamasa}
 ${instruccionesnapolitana}%0A
-${superpepperonicantidad} ${superpepperonipizza} ${superpepperonitamaño} ${superpepperonimasa}
+${superpepperonicantidad}+${superpepperonipizza}+${superpepperonitamaño}+${superpepperonimasa}
 ${instruccionessuperpepperoni}%0A
-${lucopizzacantidad} ${lucopizzapizza} ${lucopizzatamaño} ${lucopizzamasa}
+${lucopizzacantidad}+${lucopizzapizza}+${lucopizzatamaño}+${lucopizzamasa}
 ${instruccioneslucopizza}%0A
-${vegetarianacantidad} ${vegetarianapizza} ${vegetarianatamaño} ${vegetarianamasa}
+${vegetarianacantidad}+${vegetarianapizza}+${vegetarianatamaño}+${vegetarianamasa}
 ${instruccionesvegetariana}%0A
-${chilliancantidad} ${chillianpizza} ${chilliantamaño} ${chillianmasa}
+${chilliancantidad} ${chillianpizza}+${chilliantamaño}+${chillianmasa}
 ${instruccioneschillian}%0A
-${cheeseburgercantidad} ${cheeseburgerpizza} ${cheeseburgertamaño} ${cheeseburgermasa}
+${cheeseburgercantidad}+${cheeseburgerpizza}+${cheeseburgertamaño}+${cheeseburgermasa}
 ${instruccionescheeseburger}%0A
-${pollobbqcantidad} ${pollobbqpizza} ${pollobbqtamaño} ${pollobbqmasa}
+${pollobbqcantidad}+${pollobbqpizza}+${pollobbqtamaño}+${pollobbqmasa}
 ${instruccionespollobbq}%0A
-${armatupizzacantidad} ${armatupizzapizza} ${armatupizzatamaño}%0A%0A
-${pizzauno}%0A
+${armatupizzacantidad}+${armatupizzapizza}+${armatupizzatamaño}%0A%0A
+${pizzauno}
 ${armatupizzasalsa}%0A
 ${armatupizzaingredientes}%0A%0A
-${pizzados}%0A
+${pizzados}
 ${armatupizzasalsados}%0A
 ${armatupizzaingredientesdos}%0A
 🛎️====FIN====🛎️%0A
@@ -171,7 +175,7 @@ ${armatupizzaingredientesdos}%0A
 *Envía Este Mensaje ➡️*`
 
 
-if (nombre === "" || direccion === "" || formadepago === "" || telefono === "") {
+if (nombre === "" || formadepago === "" || telefono === "" || direccionlugar === "" ) {
 resp.classList.add("fail");
 resp.innerHTML = `Parece que faltan algunos datos; `;
 return false;
@@ -238,5 +242,54 @@ telefono.addEventListener("keyup",e=>{
 })
 
 
+direccion.addEventListener("keyup", e => {
+  let string = e.target.value;
+  e.target.value = string.replace(/\d/g, "");
+});
 
 
+inputdepartamento.addEventListener("keyup",e=>{
+  let string = e.target.value
+  e.target.value = string.split(" ").join("-");
+})
+
+
+     
+function eliminarIngrediente(palabraAntigua, palabraNueva) {
+var textarea = document.getElementById("input-ingredientes");
+var contenido = textarea.value;
+var nuevoContenido = contenido.replace(new RegExp(palabraAntigua, 'g'), palabraNueva);
+textarea.value = nuevoContenido;
+
+
+
+}
+
+
+function agregarIngrediente(valor) {
+var areaDeTexto = document.getElementById("input-ingredientes");
+areaDeTexto.value += valor + "\n";
+    }
+
+    document.getElementById('2-cantidading').addEventListener('input', function() {
+      if (this.value == 3) {
+        document.getElementById('2-more-ing').hidden = false;
+      }
+    });
+    function eliminarIngrediente2(palabraAntigua, palabraNueva) {
+      var textarea = document.getElementById("input-ingredientes-dos");
+      var contenido = textarea.value;
+      var nuevoContenido = contenido.replace(new RegExp(palabraAntigua, 'g'), palabraNueva);
+      textarea.value = nuevoContenido;
+      
+      
+      
+      }
+    // Abre la ventana de carga automáticamente al cargar la página
+    window.onload = function() {
+      document.getElementById('carga').style.display = 'block';
+      // Cierra la ventana de carga después de 4 segundos
+      setTimeout(function() {
+          document.getElementById('carga').style.display = 'none';
+      }, 4000);
+  };
