@@ -695,7 +695,6 @@ height: 47px;
  background-color: #fff;
   padding: 6px;
   border-radius: 0px;
-  margin-left: 0%;
   z-index: 20;
   border: white;
 
@@ -1112,20 +1111,13 @@ body {
  border-bottom: solid 2px #000000;
 }
 
-.palmaspizzalogo {
- height: 55px;
- background-color: #ff8900;
- margin: 2px;
- padding-top: 8px;
 
-}
 
 #total {
   background-color: #ffffff;
 z-index: 9 !important;
 margin-top: 6px;
-margin-left: 74px;
-max-width: 40%;
+max-width: 130px;
 border-top-right-radius: 8px;
 border-bottom-right-radius: 8px;
 font-size: 150% !important;
@@ -1134,7 +1126,8 @@ font-size: 170% !important;
 letter-spacing: 1px;
 font-family:  'Franklin Gothic Medium', Haettenschweiler, 'Arial Narrow Bold',  Franklin Gothic Medium;
 border-left: 0px;
-padding: 20px;
+padding-left: 40px;
+margin-left: 155px !important;
 }
 
 
@@ -1146,10 +1139,18 @@ color: #ff6a00;
 font-size: 190% !important;
 font-family:  'Franklin Gothic Medium', Haettenschweiler, 'Arial Narrow Bold',  Franklin Gothic Medium;
 border-left: 0px;
-margin-left: 147px;
+margin-left: 190px;
 margin-top: 20px;
 }
 
+
+#finalizar-1 {
+  position: absolute;
+ margin-left: 290px;
+ margin-top: 10px !important;
+ z-index: 1672 !important;
+ border: #fff solid 3px;
+}
 
 
 * {
@@ -1763,13 +1764,12 @@ height: 47px;
 
 
 .carrofixedheader {
-  position: fixed;
   height: 8%;
   margin-top: -53px;
  background-color: transparent;
   padding: 6px;
   border-radius: 0px;
-  margin-left: 0%;
+  margin-left: 50px !important;
   z-index: 20;
 
 }
@@ -1795,6 +1795,8 @@ height: 47px;
  border-bottom-left-radius: 8px;
  margin-top: -28px;
  border-right: 0px;border-left: 2px solid black;
+ position: absolute;
+ margin-left: -100px;
 }
 
 
@@ -1805,6 +1807,7 @@ height: 47px;
   z-index: 138737874843784 !important;
   padding-right: 45%;
   height: 56px !important;
+  margin-left: 35px;
 }
 
 .buttxn {

@@ -37,10 +37,57 @@ const armatupizzaingredientesdos = document.querySelector("#input-ingredientes-d
 
 
 // PIZZAS 
-
+const pizzas = document.querySelector("#pizzas").value;
 // ITALIANA 
 const cantidaditaliana = document.querySelector("#cantidad-italiana-input").value;
 const pizzaitaliana = document.querySelector("#pizza-italiana-input").value;
+
+
+// HAWAIANA
+const cantidadhawaiana = document.querySelector("#cantidad-hawaiana-input").value;
+const pizzahawaiana = document.querySelector("#pizza-hawaiana-input").value;
+
+
+
+// NAPOLITANA
+const cantidadnapolitana = document.querySelector("#cantidad-napolitana-input").value;
+const pizzanapolitana = document.querySelector("#pizza-napolitana-input").value;
+
+
+
+// SUPER PEPPERONI
+const cantidadsuperpepperoni = document.querySelector("#cantidad-superpepperoni-input").value;
+const pizzasuperpepperoni = document.querySelector("#pizza-superpepperoni-input").value;
+
+
+// LUCO PIZZA
+const cantidadlucopizza = document.querySelector("#cantidad-lucopizza-input").value;
+const pizzalucopizza = document.querySelector("#pizza-lucopizza-input").value;
+
+
+// VEGETARIANA
+const cantidadvegetariana = document.querySelector("#cantidad-vegetariana-input").value;
+const pizzavegetariana = document.querySelector("#pizza-vegetariana-input").value;
+
+
+
+// CHEESEBURGER
+const cantidadcheeseburger = document.querySelector("#cantidad-cheeseburger-input").value;
+const pizzacheeseburger = document.querySelector("#pizza-cheeseburger-input").value;
+
+
+
+// POLLO BBQ
+const cantidadpollobbq = document.querySelector("#cantidad-pollobbq-input").value;
+const pizzapollobbq = document.querySelector("#pizza-pollobbq-input").value;
+
+
+
+// CHILLIAN
+const cantidadchillian = document.querySelector("#cantidad-chillian-input").value;
+const pizzachillian = document.querySelector("#pizza-chillian-input").value;
+
+
 const resp = document.querySelector("#respuesta");
 
 
@@ -60,13 +107,21 @@ ${direccionlugar}+${direccion}+${direccionnum}%0A
 ${inputdepartamento}+${otro}%0A
 --------------------- %0A
 🛎️== *PEDIDO* == 🛎️ %0A
-${cantidaditaliana}
-${pizzaitaliana}%0A
+${pizzas}
+${cantidaditaliana}+${pizzaitaliana}%0A
+${cantidadhawaiana}+${pizzahawaiana}%0A
+${cantidadnapolitana}+${pizzanapolitana}%0A
+${cantidadsuperpepperoni}+${pizzasuperpepperoni}%0A
+${cantidadvegetariana}+${pizzavegetariana}%0A
+${cantidadlucopizza}+${pizzalucopizza}%0A
+${cantidadcheeseburger}+${pizzacheeseburger}%0A
+${cantidadpollobbq}+${pizzapollobbq}%0A
+${cantidadchillian}+${pizzachillian}%0A
 ${armatupizzacantidad}+${armatupizzapizza}%0A%0A
 ${pizzauno}
 ${armatupizzasalsa}%0A
 ${armatupizzaingredientes}%0A%0A
-${pizzados}
+${pizzados}%0A
 ${armatupizzasalsados}%0A
 ${armatupizzaingredientesdos}%0A
 🛎️====FIN====🛎️%0A
@@ -185,6 +240,7 @@ areaDeTexto.value += valor + "\n";
       }
     // Abre la ventana de carga automáticamente al cargar la página
     window.onload = function() {
+      bienvenido.play();
       document.getElementById('carga').style.display = 'block';
       
       // Cierra la ventana de carga después de 4 segundos
@@ -195,6 +251,7 @@ areaDeTexto.value += valor + "\n";
 
   function comenzarpedido() {
     document.getElementById('carga').style.display = 'none';
+    seleccionaropcion.play();
   }
   function okpromocioncocacola() {
   document.getElementById("promocion-coca-cola").hidden = true;
@@ -276,4 +333,20 @@ areaDeTexto.value += valor + "\n";
 
 
 
+  function sumarpizzas() {
+    const italianacantidad = parseInt(document.querySelector('#cantidad-italiana-input').value) || 0;
+    const hawaianacantidad = parseInt(document.querySelector('#cantidad-hawaiana-input').value) || 0;
+    const napolitanacantidad = parseInt(document.querySelector('#cantidad-napolitana-input').value) || 0;
+    const superpepperonicantidad = parseInt(document.querySelector('#cantidad-superpepperoni-input').value) || 0;
+    const vegetarianacantidad = parseInt(document.querySelector('#cantidad-vegetariana-input').value) || 0;
+    const lucopizzacantidad = parseInt(document.querySelector('#cantidad-lucopizza-input').value) || 0;
+    const cheeseburgercantidad = parseInt(document.querySelector('#cantidad-cheeseburger-input').value) || 0;
+    const pollobbqcantidad = parseInt(document.querySelector('#cantidad-pollobbq-input').value) || 0;
+    const chilliancantidad = parseInt(document.querySelector('#cantidad-chillian-input').value) || 0;
   
+    const totalcantidadpizzas = italianacantidad + hawaianacantidad + napolitanacantidad + superpepperonicantidad + vegetarianacantidad + lucopizzacantidad + cheeseburgercantidad + pollobbqcantidad + chilliancantidad;
+  
+    document.querySelector('#cantidad-de-pizzas').value = totalcantidadpizzas;
+  }
+
+
