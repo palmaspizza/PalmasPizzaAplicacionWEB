@@ -500,7 +500,7 @@ function jamonD2(){
 
     
       function agregadoIng2() {
-        var input = document.getElementById("2-total");
+        var input = document.getElementById("total");
         var valor = parseInt(input.value);
         input.value = valor + 1000;
         
@@ -527,7 +527,7 @@ function jamonD2(){
       
     
       function offagregadoIng2() {
-        var total = document.getElementById("2-total");
+        var total = document.getElementById("total");
         total.value = parseInt(total.value) - 1000;
       }
 

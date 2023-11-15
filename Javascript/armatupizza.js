@@ -594,7 +594,6 @@ function jamonD(){
     document.getElementById("input-arma-tu-pizza-tamaño").value = 'MEDIANA';
     document.getElementById("input-arma-tu-pizza-pizza").value = 'PIZZA';
     document.getElementById("pizza-title-2").hidden = true;
-    document.getElementById("2-input-ingredientes").display = none;
     
     // -
     document.getElementById("1medianas").hidden = true;
@@ -632,14 +631,16 @@ function jamonD(){
     }
     
     function medianasdos() {
-      document.getElementById("input-pizza-uno").value = '*Pizza 1:* %0A';
-      document.getElementById("input-pizza-dos").value = '*Pizza 2:* %0A';
-    document.getElementById("input-arma-tu-pizza-precio").value = '14990';
-    document.getElementById("input-arma-tu-pizza-cantidad").value = '2';
+    document.getElementById("finalizar-pedido-button").hidden = false;
+    document.getElementById("total").value = '14990';
+    document.getElementById("input-pizza-uno").value = '*Pizza 1:* %0A';
+    document.getElementById("input-pizza-dos").value = '*Pizza 2:* %0A';
     document.getElementById("2-siguiente-arma-tu-pizza").hidden = false;
     document.getElementById("agregar-al-pedido-arma-tu-pizza").hidden = true;
-    document.getElementById("2-input-ingredientes").hidden = false;
-    
+    document.getElementById("todo").hidden = false;
+    document.getElementById("1-pizza-number").hidden = false;
+    document.getElementById('2-pizzas-medianas').hidden= false;
+    document.getElementById("pedido-vacio").hidden = true;
     }
 
 
@@ -873,24 +874,21 @@ function hiddentitlepizza(){
     }
     
     function familiaresdos() {
+    document.getElementById("finalizar-pedido-button").hidden = false;
+    document.getElementById("total").value = '17990';
     document.getElementById("input-pizza-uno").value = '*Pizza 1:* %0A';
     document.getElementById("input-pizza-dos").value = '*Pizza 2:* %0A';
-    document.getElementById("input-arma-tu-pizza-precio").value = '17990';
-    document.getElementById("input-arma-tu-pizza-cantidad").value = '2';
     document.getElementById("2-siguiente-arma-tu-pizza").hidden = false;
     document.getElementById("agregar-al-pedido-arma-tu-pizza").hidden = true;
-    document.getElementById("2-input-ingredientes").style.display = block;
     document.getElementById("pizza-title-2").hidden = false;
-    document.getElementById("2-input-ingredientes").hidden = false;
+    document.getElementById("todo").hidden = false;
+    document.getElementById("1-pizza-number").hidden = false;
+    document.getElementById('2-pizzas-familiares').hidden= false;
+    document.getElementById("pedido-vacio").hidden = true;
     }
     
     
-    
-    function pizza() {
-      document.getElementById("input-arma-tu-pizza-pizza").value = 'PIZZAS';
-      document.getElementById("volver-html").hidden = true; 
-      }
-    
+  
     
     
       function borrarpedidoarmatupizza() {
@@ -943,12 +941,21 @@ function hiddentitlepizza(){
 
 
 
-
+       
+        function departamentotrue(){
+          document.getElementById("departamento-window").hidden = true;
+          } 
     
-    
+           
+          function departamentofalse(){
+            document.getElementById("departamento-window").hidden = false;
+            document.getElementById("Departamento").value = '*Departamento:* %0A';
+        
+            } 
     
     
         function agregaralpedidox() {
+          document.getElementById("pedido-vacio").hidden = false;
           document.getElementById("finalizar-pedido-button").hidden = false;
           document.getElementById("arrowvercarrito").hidden = false;
           document.getElementById("total").style.background = "#fff"
@@ -1060,7 +1067,6 @@ function hiddentitlepizza(){
       document.getElementById("2-siguiente-arma-tu-pizza").hidden = true;
       document.getElementById("pizza-title-2").hidden = true;
       document.getElementById("agregar-al-pedido-arma-tu-pizza").hidden = false;
-      document.getElementById("2-input-ingredientes").display = none;
     
     
       
@@ -1245,25 +1251,7 @@ function hiddentitlepizza(){
     
     
     
-        function selectarmatupizza(){
-          try {
-      
-            var italiana= parseFloat(document.getElementById("input-italiana-precio").value) || 0,
-           hawaiana= parseFloat(document.getElementById("input-hawaiana-precio").value) || 0,
-           napolitana= parseFloat(document.getElementById("input-napolitana-precio").value) || 0,
-           superpepperoni= parseFloat(document.getElementById("input-superpepperoni-precio").value) || 0,
-           vegetariana= parseFloat(document.getElementById("input-vegetariana-precio").value) || 0,
-           lucopizza= parseFloat(document.getElementById("input-lucopizza-precio").value) || 0,
-           pollobbq= parseFloat(document.getElementById("input-pollobbq-precio").value) || 0,
-           cheeseburger= parseFloat(document.getElementById("input-cheeseburger-precio").value) || 0,
-           chillian= parseFloat(document.getElementById("input-chillian-precio").value) || 0,
-           armatupizza= parseFloat(document.getElementById("input-arma-tu-pizza-precio").value) || 0,
-           inputselectarmatupizza= parseFloat(document.getElementById("input-select-arma-tu-pizza").value) || 0;
-          
-            
-        document.getElementById("total").value = italiana + hawaiana + napolitana + superpepperoni + vegetariana + lucopizza + pollobbq + chillian + cheeseburger + armatupizza + inputselectarmatupizza;
-      } catch (e) {}
-        }
+   
     
     
     
