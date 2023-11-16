@@ -314,8 +314,6 @@ areaDeTexto.value += valor + "\n";
     document.getElementById("todo").hidden = false;
     document.getElementById("finalizar-pedido-button").hidden = false;
     document.getElementById("pedido-vacio").hidden = true;
-    document.getElementById("formato-pizzas-visible").value = '1 Pizza Familiar';
-    document.getElementById("pizzas-visible").value = 'Pizza:';
     document.getElementById('1-pizza-familiar').hidden= false;
     document.getElementById("pedido-vacio").hidden = true;
   }
@@ -323,8 +321,6 @@ areaDeTexto.value += valor + "\n";
   function unamediana(){
     document.getElementById("total").value = '8990';
     document.getElementById("todo").hidden = false;
-    document.getElementById("formato-pizzas-visible").value = '1 Pizza Mediana';
-    document.getElementById("pizzas-visible").value = 'Pizza:';
     document.getElementById('1-pizza-mediana').hidden= false;
     document.getElementById("pedido-vacio").hidden = true;
   }
